@@ -1,0 +1,43 @@
+extends layout
+
+block content
+
+  #left-column.column
+    h2 Músico
+    ul#musicians
+      each musician in musicians
+        li(class='musician-name')
+          a(href='#') #{musician}
+
+  #right-column.column
+    h2 discos polulares
+    div#discography
+    h3 Añadir nuevo músico y discos:
+    label(for="musician") músico:
+    br
+    input(type="text")#musician
+    div#content-add
+      strong mejores discos:
+      div#content-musicians-add
+        div.content-disc
+          label(for="title1") titulo:
+          input(type="text")#title1
+          br
+          label(for="year1") año:
+          input(type="text")#year1
+          
+        div.content-disc
+          label(for="title2") titulo:
+          input(type="text")#title2
+          br
+          label(for="year2") año:
+          input(type="text")#year2
+          
+        div.content-disc
+          label(for="title3") titulo:
+          input(type="text")#title3
+          br
+          label(for="year3") año:
+          input(type="text")#year3
+          
+      input(type="button", id='add-new-musician', value='Añadir')
